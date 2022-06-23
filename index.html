@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Jadwal Sholat</title>
+</head>
+
+<body>
+
+    <div class="container mt-3 ">
+
+        <div class="input-group mb-3">
+            <input type="text" class="form-control cari-kota" placeholder="Cari Kota..."
+                aria-label="Recipient's username" aria-describedby="basic-addon2">
+        </div>
+
+        <ul class="list-group mt-3 hidden-list nama-list-kota">
+            <!-- <a href="#" class="list-group-item list-group-item-action">Bandung</a>
+      <a href="#" class="list-group-item list-group-item-action">Jakarta</a>
+      <a href="#" class="list-group-item list-group-item-action">Surabaya</a> -->
+        </ul>
+
+
+        <div class="card mt-3 ">
+            <div class="card-header">
+                <h4 class="text-center">Jadwal Sholat Wilayah Indonesia</h4>
+            </div>
+            <div class="card-body">
+                <p class="text-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                    </svg> <span id="judul-kota">Kota Bandung</span> </p>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Imsak
+                        <span class="badge bg-primary rounded-pill imsak">-</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Subuh
+                        <span class="badge bg-primary rounded-pill subuh">-</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Terbit
+                        <span class="badge bg-primary rounded-pill terbit">-</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Dzuhur
+                        <span class="badge bg-primary rounded-pill dzuhur">-</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Ashar
+                        <span class="badge bg-primary rounded-pill ashar">-</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Maghrib
+                        <span class="badge bg-primary rounded-pill maghrib">-</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Isya
+                        <span class="badge bg-primary rounded-pill isya">-</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-footer text-muted tanggal">
+                23 Juni 2022
+            </div>
+            <div class="clock">
+                <h5 class="font">
+                    <span id="hours">-</span>
+                    <span>:</span>
+                    <span id="minutes">-</span>
+                    <span>:</span>
+                    <span id="seconds">-</span>
+                    <span>WIB</span>
+                </h5>
+            </div>
+        </div>
+    </div>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+
+<script src="script.js"></script>
+</body>
+
+</html>
