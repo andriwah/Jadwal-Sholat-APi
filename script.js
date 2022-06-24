@@ -29,20 +29,22 @@ function cekKota() {
     } else {
         cekKota = namaKota;
     }
+
     return cekKota;
 }
 
 
-function getJadwalDay() {
-    fetch('https://api.banghasan.com/sholat/format/json/jadwal/kota/' + cekKota() + '/tanggal/' + tanggal)
+function getJadwalDay(id, kota) {
+    console.log('entry')
+    fetch('https://api.banghasan.com/sholat/format/json/jadwal/kota/' + id + '/tanggal/' + tanggal)
         .then(response => response.json())
         .then(data => {
             const jadwal = data.jadwal.data;
-            dataJadwal(jadwal);
+            dataJadwal(jadwal, kota);
         });
 }
 
-function dataJadwal(jadwal) {
+function dataJadwal(jadwal, kota) {
     document.querySelector('.imsak').textContent = jadwal.imsak;
     document.querySelector('.subuh').textContent = jadwal.subuh;
     document.querySelector('.terbit').textContent = jadwal.terbit;
@@ -51,10 +53,8 @@ function dataJadwal(jadwal) {
     document.querySelector('.maghrib').textContent = jadwal.maghrib;
     document.querySelector('.isya').textContent = jadwal.isya;
     document.querySelector('.tanggal').textContent = jadwal.tanggal;
-    if (!localStorage.namakota) {
-        window.localStorage.setItem('namakota', 'Jakarta');
-    }
-    document.querySelector('#judul-kota').textContent = localStorage.namakota;
+    // document.querySelector('#judul-kota').textContent = localStorage.namakota;
+    document.querySelector('#judul-kota').textContent = kota;
 }
 
 
@@ -95,7 +95,9 @@ namaListKota.addEventListener('keyup', function () {
                         document.querySelector('#judul-kota').textContent = localStorage.namakota;
                         addKota.classList.add('hidden-list');
                         namaListKota.value = '';
-                        location.reload();
+                        // location.reload();
+                        // onClickKota(idkota, namaKota)
+                        getJadwalDay(idkota, namaKota)
                     });
                 });
 
@@ -103,9 +105,8 @@ namaListKota.addEventListener('keyup', function () {
     } else {
         addKota.classList.add('hidden-list');
     }
-
 });
-getJadwalDay();
+getJadwalDay('667', 'KOTA JAKARTA');
 
 function updateTime() {
     let dateTime = new Date();
