@@ -35,7 +35,6 @@ function cekKota() {
 
 
 function getJadwalDay(id, kota) {
-    console.log('entry')
     fetch('https://api.banghasan.com/sholat/format/json/jadwal/kota/' + id + '/tanggal/' + tanggal)
         .then(response => response.json())
         .then(data => {
@@ -90,9 +89,9 @@ namaListKota.addEventListener('keyup', function () {
                     k.addEventListener('click', function () {
                         const idkota = this.dataset.idkota;
                         const namaKota = this.textContent;
-                        window.localStorage.setItem('idkota', idkota);
-                        window.localStorage.setItem('namakota', namaKota);
-                        document.querySelector('#judul-kota').textContent = localStorage.namakota;
+                        // window.localStorage.setItem('idkota', idkota);
+                        // window.localStorage.setItem('namakota', namaKota);
+                        // document.querySelector('#judul-kota').textContent = localStorage.namakota;
                         addKota.classList.add('hidden-list');
                         namaListKota.value = '';
                         // location.reload();
